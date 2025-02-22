@@ -1,0 +1,29 @@
+.header {
+  max-width: 1240px;
+  display: grid;
+  grid-template-areas: 'logo . navigation';
+  grid-template-columns: 131px minmax(auto, 191px) auto;
+
+  @media(max-width:800px) {
+    display: none;
+  }
+}
+
+.navigation {
+  grid-area: navigation;
+}
+
+.navigation_list {
+  display: grid;
+  grid-template-columns: repeat(5, min-content);
+  gap: 60px;
+}
+
+.nav_element {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.logo {
+  grid-area: logo;
+}
