@@ -9,8 +9,11 @@ export const casesApi = createApi({
     getCategories: builder.query({
       query: () => `/project-categories`,
     }),
+    getProjects: builder.query({
+      query: () => `/projects`,
+    }),
   }),
 })
 
 
-export const { useGetCategoriesQuery } = casesApi
+export const { useGetCategoriesQuery, useGetProjectsQuery } = casesApi

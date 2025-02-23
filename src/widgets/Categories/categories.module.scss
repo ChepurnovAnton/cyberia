@@ -1,10 +1,14 @@
+@use '../../shared/styles/variables' as vars;
+
 .categories {
+
   justify-content: space-between;
   display: grid;
   grid-template-columns: repeat(4, auto);
 }
 
 .catygory_button {
+  font-family: vars.$fira-sans ;
   font-weight: 400;
   font-size: 24px;
   box-shadow: 8px 15px 29px 0 rgba(23, 27, 44, 0.41);
@@ -13,4 +17,5 @@
   border-radius: 7px;
   padding: 10px 29px;
   height: 49px;
+  color: #eef3ff;
 }
