@@ -7,11 +7,11 @@ import { Provider } from 'react-redux';
 import { store } from './app/store/store.ts';
 
 createRoot(document.getElementById('root')!).render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <StrictMode>
+  <StrictMode>
+    <Provider store={store}>
+      <BrowserRouter>
         <App />
-      </StrictMode>
-    </BrowserRouter>
-  </Provider>,
+      </BrowserRouter>
+    </Provider>
+  </StrictMode>,
 );

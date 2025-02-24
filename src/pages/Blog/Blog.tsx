@@ -1,8 +1,6 @@
-
+import styles from './blog.module.scss';
 const Blog = () => {
-  return (
-    <div>Blog</div>
-  )
-}
+  return <h1 className={styles.title}>Блог</h1>;
+};
 
-export default Blog
+export default Blog;

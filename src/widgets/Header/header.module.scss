@@ -1,3 +1,5 @@
+@use '../../shared/styles/variables' as vars;
+
 .header {
   display: grid;
   grid-area: header;
@@ -7,7 +9,7 @@
   align-items: center;
   padding: 64px 28px 0 28px;
 
-  @media(max-width:1070px) {
+  @media(max-width: vars.$medium-size) {
     display: none;
   }
 }

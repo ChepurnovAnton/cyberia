@@ -1,8 +1,6 @@
-
+import styles from './services.module.scss';
 const Services = () => {
-  return (
-    <div>Services</div>
-  )
-}
+  return <h1 className={styles.title}>Услуги</h1>;
+};
 
-export default Services
+export default Services;

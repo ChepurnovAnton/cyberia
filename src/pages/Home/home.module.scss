@@ -5,14 +5,5 @@
   font-weight: 600;
   font-size: 48px;
   color: #eef3ff;
-  margin-bottom: 65px;
-
-  @media(max-width: vars.$mobile-size) {
-    font-size: 21px;
-    margin-bottom: 47px;
-  }
-}
-
-.cases {
   padding: vars.$padding;
 }

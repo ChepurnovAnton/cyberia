@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { casesApi } from '../../shared/api/casesApi'
+import activeCategory from '../sliced/activeCategorySlice'
 
 export const store = configureStore({
   reducer: {
+    activeCategory: activeCategory,
     [casesApi.reducerPath]: casesApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>

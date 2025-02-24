@@ -1,0 +1,6 @@
+@use '../../shared/styles/variables' as vars;
+
+.breadcrums {
+  padding: vars.$padding;
+  margin: 65px 0 130px 0;
+}
