@@ -1,13 +1,19 @@
 @use '../../shared/styles/variables' as vars;
 
 .categories {
-
   justify-content: space-between;
   display: grid;
   grid-template-columns: repeat(4, auto);
+
+  @media(max-width: 1070px) {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    row-gap: 20%;
+    column-gap: 1%;
+  }
 }
 
-.catygory_button {
+.category_button {
   font-family: vars.$fira-sans ;
   font-weight: 400;
   font-size: 24px;
@@ -18,4 +24,10 @@
   padding: 10px 29px;
   height: 49px;
   color: #eef3ff;
+  width: 100%;
+
+  @media(max-width:740px) {
+    font-size: 12px;
+    padding: 0;
+  }
 }

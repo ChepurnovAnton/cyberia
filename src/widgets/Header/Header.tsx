@@ -1,4 +1,4 @@
-import { NAV_LIST } from './config/navList';
+import { NAV_LIST } from '../../shared/config/navList';
 import styles from './header.module.scss';
 import { Link } from 'react-router';
 import { useLocation } from 'react-router';

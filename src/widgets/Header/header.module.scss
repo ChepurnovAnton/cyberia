@@ -5,8 +5,9 @@
   grid-template-columns: 131px minmax(auto, 191px) auto minmax(auto, 373px);
   max-width: 1240px;
   align-items: center;
+  padding: 64px 28px 0 28px;
 
-  @media(max-width:709px) {
+  @media(max-width:1070px) {
     display: none;
   }
 }

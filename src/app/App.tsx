@@ -1,6 +1,7 @@
 import Header from '../widgets/Header/Header';
 import MobileHeader from '../widgets/MobileHeader/MobileHeader';
 import AppRouter from './AppRouter';
+import Footer from '../widgets/Footer/Footer';
 
 const App = () => {
   return (
@@ -10,7 +11,7 @@ const App = () => {
       <main>
         <AppRouter />
       </main>
-      <footer style={{ background: 'red',   gridArea: 'footer'}}>footer</footer>
+      <Footer />
     </div>
   );
 };

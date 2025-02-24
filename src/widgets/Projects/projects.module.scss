@@ -1,8 +1,8 @@
 .project_list {
   margin-top: 52px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(327px, 387px));
-  justify-content: space-between;
-  row-gap: 5%;
-  column-gap: 3%;
+  grid-template-columns: repeat(auto-fit, minmax(327px, 387px));
+  justify-content: center;
+  row-gap: 31px;
+  column-gap: 39px;
 }

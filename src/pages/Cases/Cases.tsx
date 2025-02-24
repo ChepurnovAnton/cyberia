@@ -4,7 +4,7 @@ import Categories from '../../widgets/Categories/Categories';
 import Projects from '../../widgets/Projects/Projects';
 
 const Cases = () => {
-  const { data: categories } = useGetCategoriesQuery(null);
+  const { data: categories = { items: [] } } = useGetCategoriesQuery('');
 
   return (
     <section className={styles.cases}>
