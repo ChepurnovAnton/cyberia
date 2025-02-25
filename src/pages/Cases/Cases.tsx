@@ -1,6 +1,6 @@
 import styles from './cases.module.scss';
 import { useGetCategoriesQuery } from '../../shared/api/casesApi';
-import Categories from '../../widgets/Categories/Categories';
+import Categories from '../../features/Categories/Categories';
 import Projects from '../../widgets/Projects/Projects';
 
 const Cases = () => {

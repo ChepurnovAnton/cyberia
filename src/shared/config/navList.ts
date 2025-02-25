@@ -4,7 +4,7 @@ interface NAV_LIST {
   id: number;
 }
 
-export const NAV_LIST: NAV_LIST[] = [
+export const navList: NAV_LIST[] = [
   { name: 'Агенство', link: '/agency', id: 1 },
   { name: 'Услуги', link: '/services', id: 2 },
   { name: 'Кейсы', link: '/cases', id: 3 },

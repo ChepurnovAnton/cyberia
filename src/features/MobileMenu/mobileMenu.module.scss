@@ -1,0 +1,60 @@
+@use '../../app/styles/variables' as vars;
+
+.mobile_menu {
+  background-color: vars.$mobile-menu;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  padding: 0 24px;
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+}
+
+.close_button {
+  background-color: transparent;
+  border: none;
+  justify-self: end;
+  padding: 20px 0 0 0;
+}
+
+.nav_list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contacts_block {
+  margin-top: 87px;
+
+  &::before {
+    content: '';
+    margin-top: -38px;
+    position: absolute;
+    height: 2px;
+    right: 48px;
+    left: 26px;
+    background: #2b2d3a;
+  }
+
+  &::after {
+    content: '';
+    margin-top: 44px;
+    position: absolute;
+
+    right: 48px;
+    left: 26px;
+    height: 2px;
+    background: #2b2d3a;
+  }
+}
+
+.contacts_list {
+  margin-top: 42px;
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+

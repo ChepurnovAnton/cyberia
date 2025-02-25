@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import MobileMenu from '../MobileMenu/MobileMenu';
+import MobileMenu from '../../features/MobileMenu/MobileMenu';
 import styles from './mobileHeader.module.scss';
 
 const MobileHeader = () => {

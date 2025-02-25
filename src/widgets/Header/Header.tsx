@@ -1,4 +1,4 @@
-import { NAV_LIST } from '../../shared/config/navList';
+import { navList } from '../../shared/config/navList';
 import styles from './header.module.scss';
 import { Link } from 'react-router';
 import { useLocation } from 'react-router';
@@ -14,7 +14,7 @@ const Header = () => {
       />
       <nav className={styles.navigation}>
         <ul className={styles.navigation_list}>
-          {NAV_LIST.map(navItem => (
+          {navList.map(navItem => (
             <li
               className={
                 navItem.link !== pathname
