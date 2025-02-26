@@ -7,7 +7,7 @@ interface MobileNavigationItemProps {
   closeMenu: (open: boolean) => void;
 }
 
-const MobileNavigationItem: MobileNavigationItemProps = ({
+const MobileNavigationItem: React.FC<MobileNavigationItemProps> = ({
   pathname,
   navItem,
   closeMenu,
@@ -16,7 +16,7 @@ const MobileNavigationItem: MobileNavigationItemProps = ({
     <li>
       <Link
         to={navItem.link}
-        onClick={closeMenu}
+        onClick={() => closeMenu(false)}
         className={
           pathname === navItem.link
             ? `${styles.nav_element} ${styles.active}`

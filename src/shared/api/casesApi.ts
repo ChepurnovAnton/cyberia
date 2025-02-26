@@ -10,8 +10,15 @@ export const casesApi = createApi({
     getProjects: builder.query({
       query: () => `/projects`,
     }),
+    submitForms: builder.mutation({
+      query: (formData) => ({
+        url: '/feedbacks',
+        method: 'POST',
+        body: formData,
+      })
+    })
   }),
 })
 
 
-export const { useGetCategoriesQuery, useGetProjectsQuery } = casesApi
+export const { useGetCategoriesQuery, useGetProjectsQuery, useSubmitFormsMutation } = casesApi
