@@ -5,12 +5,12 @@ import { Input } from './types';
 import styles from './forms.module.scss';
 
 const Forms = () => {
-  const [formData, {isSuccess}] = useSubmitFormsMutation();
+  const [formData, { isSuccess }] = useSubmitFormsMutation();
   const [validationError, setValidationError] = useState({
     email: [],
     phone: [],
   });
- 
+
   const {
     register,
     handleSubmit,
@@ -25,6 +25,8 @@ const Forms = () => {
         phone: [],
       });
     } catch (error: any) {
+      console.log(error);
+
       if (error.data && error.data.errors) {
         setValidationError(error.data.errors);
       }
@@ -105,7 +107,11 @@ const Forms = () => {
           )}
         </fieldset>
 
-        <input className={styles.checkbox} type="checkbox" />
+        <label className={styles.custom_checkbox}>
+          <input className={styles.checkbox} type="checkbox" />
+          <legend>Согласие на обработку персональных данных</legend>
+        </label>
+
         <button className={styles.button}>отправить </button>
 
         {isSuccess && <p>заявка отправлена!!!</p>}
