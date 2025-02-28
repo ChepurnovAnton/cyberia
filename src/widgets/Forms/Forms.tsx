@@ -38,9 +38,9 @@ const Forms = () => {
   const renderValidationError = (errors: string[] | undefined) => {
     if (!errors) return null;
     return errors.map((error, index) => (
-      <p key={index} className={styles.error_validation}>
+      <span key={index} className={styles.error_validation}>
         {error}
-      </p>
+      </span>
     ));
   };
 
@@ -90,7 +90,6 @@ const Forms = () => {
             type="text"
             {...register('phone')}
           />
-
           {renderValidationError(validationError.phone)}
         </fieldset>
 

@@ -1,3 +1,5 @@
+@use '../../../app/styles/variables' as vars;
+
 .button {
   background: #2d76f9;
   grid-area: button;
@@ -10,6 +12,7 @@
   font-weight: 400;
   font-size: 18px;
   color: #fff;
+  margin-top: 34px;
 
   &:hover {
     background: #2560cd;
@@ -17,5 +20,9 @@
 
   &:active {
     transform: translate(0, 3px);
+  }
+
+  @media(max-width: vars.$medium-size) {
+    margin-top: 42px;
   }
 }
