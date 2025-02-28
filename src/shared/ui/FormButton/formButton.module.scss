@@ -1,0 +1,21 @@
+.button {
+  background: #2d76f9;
+  grid-area: button;
+  border-radius: 85px;
+  padding: 20px 45px;
+  width: 259px;
+  height: 62px;
+  justify-self: center;
+  border: none;
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+
+  &:hover {
+    background: #2560cd;
+  }
+
+  &:active {
+    transform: translate(0, 3px);
+  }
+}

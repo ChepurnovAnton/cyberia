@@ -1,13 +1,43 @@
+@use '../../app/styles/variables' as vars;
+
+.forms_section {
+  margin-top: 100px;
+  font-family: vars.$fira-sans;
+}
+
 .forms {
+  margin-top: 89px;
   display: grid;
   grid-template-areas:
     'name email phone'
     'message message message'
-    'checkbox . .'
+    'checkbox checkbox .'
     '. button .'
   ;
   grid-template-columns: repeat(3, minmax(auto, 1fr));
   gap: 38px;
+
+  @media(max-width: vars.$medium-size) {
+    grid-template-areas:
+      'name '
+      'email'
+      'phone'
+      'message'
+      'button'
+      'description'
+    ;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    grid-template-rows: auto auto auto 139px auto;
+  }
+
+}
+
+.title {
+  font-weight: 600;
+  font-size: 48px;
+  color: #eff3ff;
+  max-width: 361px;
 }
 
 .fieldset {
@@ -15,8 +45,14 @@
   border-radius: 8px;
   height: 61px;
   padding-left: 10px;
+
   legend {
     padding: 0 10px;
+    color: #eff3ff;
+
+    @media(max-width: vars.$medium-size) {
+      display: none;
+    }
   }
 }
 
@@ -32,6 +68,10 @@
 
   &::placeholder {
     color: transparent;
+
+    @media(max-width: vars.$medium-size) {
+      color: white;
+    }
   }
 
   &:-webkit-autofill,
@@ -40,7 +80,6 @@
   &:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 50px rgb(43, 44, 55) inset !important;
     border-radius: 5px;
-
     -webkit-text-fill-color: rgb(255, 255, 255) !important;
   }
 }
@@ -65,10 +104,19 @@
 .checkbox {
   grid-area: checkbox;
   justify-self: start;
-}
+  display: flex;
+  align-items: center;
+  gap: 12px;
 
-.button {
-  grid-area: button;
+  p {
+    font-weight: 300;
+    font-size: 18px;
+    color: #eff3ff;
+  }
+
+  @media(max-width: vars.$medium-size) {
+    display: none;
+  }
 }
 
 .error_validation {
@@ -76,4 +124,12 @@
   font-size: 10px;
 }
 
-8'
+.description {
+  grid-area: description;
+  justify-self: center;
+  text-align: center;
+
+  @media(min-width: vars.$medium-size) {
+    display: none;
+  }
+}

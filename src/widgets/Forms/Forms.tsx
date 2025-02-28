@@ -1,8 +1,10 @@
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { SubmitHandler, useForm, Controller } from 'react-hook-form';
+import Checkbox from '../../shared/ui/Checkbox/Checkbox';
 import { useSubmitFormsMutation } from '../../shared/api/casesApi';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Input } from './types';
 import styles from './forms.module.scss';
+import FormButton from '../../shared/ui/FormButton/FormButton';
 
 const Forms = () => {
   const [formData, { isSuccess }] = useSubmitFormsMutation();
@@ -14,6 +16,8 @@ const Forms = () => {
   const {
     register,
     handleSubmit,
+    control,
+    setValue,
     formState: { errors },
   } = useForm<Input>();
 
@@ -25,39 +29,38 @@ const Forms = () => {
         phone: [],
       });
     } catch (error: any) {
-      console.log(error);
-
-      if (error.data && error.data.errors) {
+      if (error?.data && error?.data.errors) {
         setValidationError(error.data.errors);
       }
     }
   };
 
-  const phoneValidateError =
-    'phone' in validationError &&
-    validationError?.phone.map((error, index) => (
+  const renderValidationError = (errors: string[] | undefined) => {
+    if (!errors) return null;
+    return errors.map((error, index) => (
       <p key={index} className={styles.error_validation}>
         {error}
       </p>
     ));
+  };
 
-  const emailValidationError =
-    'email' in validationError &&
-    validationError?.email.map((error, index) => (
-      <p key={index} className={styles.error_validation}>
-        {error}
-      </p>
-    ));
+  const isMobile = window.innerWidth <= 1070;
+
+  useEffect(() => {
+    if (isMobile) {
+      setValue('checkbox', true);
+    }
+  }, [isMobile, setValue]);
 
   return (
-    <>
-      <h2>Расскажите о вашем проекте</h2>
+    <section className={styles.forms_section}>
+      <h2 className={styles.title}>Расскажите о вашем проекте:</h2>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.forms}>
         <fieldset className={`${styles.fieldset} ${styles.name}`}>
-          <legend>Ваше имя</legend>
+          <legend>Ваше имя*</legend>
           <input
             className={styles.input}
-            placeholder="Ваше имя"
+            placeholder="Ваше имя*"
             type="text"
             {...register('name', { required: 'Имя обязательно' })}
           />
@@ -69,33 +72,33 @@ const Forms = () => {
         </fieldset>
 
         <fieldset className={`${styles.fieldset} ${styles.email}`}>
-          <legend>Email</legend>
+          <legend>Email*</legend>
           <input
             className={styles.input}
-            placeholder="Email"
+            placeholder="Email*"
             type="text"
             {...register('email')}
           />
-          {emailValidationError}
+          {renderValidationError(validationError.email)}
         </fieldset>
 
         <fieldset className={`${styles.fieldset} ${styles.phone}`}>
-          <legend>Телефон</legend>
+          <legend>Телефон*</legend>
           <input
             className={styles.input}
-            placeholder="Телефон"
+            placeholder="Телефон*"
             type="text"
             {...register('phone')}
           />
 
-          {phoneValidateError}
+          {renderValidationError(validationError.phone)}
         </fieldset>
 
         <fieldset className={`${styles.fieldset} ${styles.message} `}>
-          <legend>Сообщение</legend>
+          <legend>Сообщение*</legend>
           <textarea
             className={styles.input}
-            placeholder="Сообщение"
+            placeholder="Сообщение*"
             {...register('message', {
               required: 'Это поле обязательно для заполнения',
             })}
@@ -107,16 +110,31 @@ const Forms = () => {
           )}
         </fieldset>
 
-        <label className={styles.custom_checkbox}>
-          <input className={styles.checkbox} type="checkbox" />
-          <legend>Согласие на обработку персональных данных</legend>
-        </label>
-
-        <button className={styles.button}>отправить </button>
+        <div className={styles.checkbox}>
+          <Controller
+            control={control}
+            name="checkbox"
+            rules={{ required: 'Нужно согласиться, чтобы отправить форму' }}
+            render={({ field }) => <Checkbox {...field} />}
+          />
+          <p>Согласие на обработку персональных данных</p>
+          {errors.checkbox && (
+            <span className={styles.error_validation}>
+              {errors.checkbox.message}
+            </span>
+          )}
+        </div>
+        
+        <FormButton>Обсудить проект</FormButton>
+          
+        <p className={styles.description}>
+          Нажимая “Отправить”, Вы даете согласие на обработку персональных
+          данных
+        </p>
 
         {isSuccess && <p>заявка отправлена!!!</p>}
       </form>
-    </>
+    </section>
   );
 };
 
