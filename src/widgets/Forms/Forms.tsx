@@ -124,9 +124,9 @@ const Forms = () => {
             </span>
           )}
         </div>
-        
+
         <FormButton>Обсудить проект</FormButton>
-          
+
         <p className={styles.description}>
           Нажимая “Отправить”, Вы даете согласие на обработку персональных
           данных

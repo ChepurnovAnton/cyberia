@@ -3,5 +3,5 @@ export interface Input {
   email: string;
   phone: string;
   message: string;
-  checkbox: boolean | string;
+  checkbox:  string | boolean;
 }
