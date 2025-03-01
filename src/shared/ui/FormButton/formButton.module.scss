@@ -1,4 +1,4 @@
-@use '../../../app/styles/variables' as vars;
+@use '../../../app/styles/variables' as *;
 
 .button {
   background: #2d76f9;
@@ -22,7 +22,7 @@
     transform: translate(0, 3px);
   }
 
-  @media(max-width: vars.$medium-size) {
+  @media(max-width: $medium-size) {
     margin-top: 42px;
   }
 }

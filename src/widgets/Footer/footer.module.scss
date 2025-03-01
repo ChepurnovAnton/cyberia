@@ -1,3 +1,35 @@
+@use '../../app/styles/variables' as *;
+
 .footer {
   grid-area: footer;
+  display: grid;
+  // grid-template-areas: '. footer_content .';
+  background-color: $footer_background;
+  // padding: 131px 28px;
+}
+
+.footer_content {
+  grid-area: footer_content;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  // width: 1240px;
+  // max-width: $max-width;
+  // display: grid;
+  // grid-template-areas:
+  //   'logo . contacts navigation .';
+  // justify-self: center;
+
+  // grid-template-columns: 197px minmax(auto, 157px) 159px 215px minmax(auto, 459px);
+}
+
+.logo {
+  grid-area: logo;
+}
+
+.contacts {
+  grid-area: contacts;
+}
+
+.navigation {
+  grid-area: navigation;
 }

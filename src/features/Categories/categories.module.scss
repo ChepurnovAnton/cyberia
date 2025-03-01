@@ -1,4 +1,4 @@
-@use '../../app/styles/variables' as vars;
+@use '../../app/styles/variables' as *;
 
 .categories {
   justify-content: space-between;
@@ -14,7 +14,7 @@
 }
 
 .category_button {
-  font-family: vars.$fira-sans ;
+  font-family: $fira-sans ;
   font-weight: 400;
   font-size: 24px;
   box-shadow: 8px 15px 29px 0 rgba(23, 27, 44, 0.41);

@@ -1,15 +1,15 @@
-@use '../../app/styles/variables' as vars;
+@use '../../app/styles/variables' as *;
 
 .header {
   display: grid;
   grid-area: header;
   grid-template-areas: 'logo . navigation .';
   grid-template-columns: 131px minmax(auto, 191px) auto minmax(auto, 373px);
-  max-width: 1240px;
+  max-width: $max-width;
   align-items: center;
   padding: 64px 28px 0 28px;
 
-  @media(max-width: vars.$medium-size) {
+  @media(max-width: $medium-size) {
     display: none;
   }
 }

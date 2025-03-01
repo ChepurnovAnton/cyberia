@@ -1,6 +1,5 @@
 import styles from './mobileMenu.module.scss';
 import { navList } from '../../shared/config/navList';
-import { useLocation } from 'react-router';
 import { contactsList } from '../../shared/config/contactsList';
 import MobileNavigationItem from '../../shared/ui/MobileNavigationItem/MobileNavigationItem';
 
@@ -9,7 +8,6 @@ interface MobileMenuProps {
 }
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ setOpenMenu }) => {
-  const { pathname } = useLocation();
   const closeMenu = () => {
     setOpenMenu(false);
   };
@@ -24,7 +22,6 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ setOpenMenu }) => {
         {navList.map(navItem => (
           <MobileNavigationItem
             key={navItem.id}
-            pathname={pathname}
             navItem={navItem}
             closeMenu={closeMenu}
           />

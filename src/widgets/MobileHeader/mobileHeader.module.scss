@@ -1,3 +1,5 @@
+@use '../../app/styles/variables.scss' as *;
+
 .header {
   min-width: 320px;
   display: grid;
@@ -8,7 +10,7 @@
   height: 68px;
   padding: 0 28px;
 
-  @media(min-width: 1070px) {
+  @media(min-width: $medium-size) {
     display: none;
   }
 }

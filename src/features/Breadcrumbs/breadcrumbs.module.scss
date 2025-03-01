@@ -1,6 +1,6 @@
-@use '../../app/styles/variables' as vars;
+@use '../../app/styles/variables' as *;
 
 .breadcrums {
-  padding: vars.$padding;
+  padding: $padding;
   margin: 65px 0 130px 0;
 }

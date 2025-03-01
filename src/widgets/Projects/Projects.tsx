@@ -13,8 +13,8 @@ const Projects = () => {
 
   const categoryFiltering = () => {
     if (activeCategory) {
-      return projects.items.filter(project =>
-        project.categories.some(category => category.name === activeCategory),
+      return projects.items.filter((project: Project) =>
+        project.categories.some((category: { name: string }) => category.name === activeCategory),
       );
     }
     return projects.items;
@@ -26,7 +26,7 @@ const Projects = () => {
     <ul className={styles.project_list}>
       {selectCategory.map((project: Project) => (
         <li key={project.id}>
-          <ProjectCard url={project.image} title={project.title} />
+          <ProjectCard url={project.image} title={project.title} description = {project.description} />
         </li>
       ))}
     </ul>

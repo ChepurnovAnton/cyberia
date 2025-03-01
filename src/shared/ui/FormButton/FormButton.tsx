@@ -1,6 +1,11 @@
 import styles from './formButton.module.scss';
+import { ReactNode } from 'react';
 
-const FormButton = props => {
+interface FormButtonProps {
+  children: ReactNode;
+}
+
+const FormButton = (props: FormButtonProps) => {
 
   return <button className={styles.button}>{props.children}</button>;
 };

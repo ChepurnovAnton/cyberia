@@ -1,10 +1,10 @@
-interface NAV_LIST {
+interface NavList {
   name: string;
   link: string;
   id: number;
 }
 
-export const navList: NAV_LIST[] = [
+export const navList: NavList[] = [
   { name: 'Агенство', link: '/agency', id: 1 },
   { name: 'Услуги', link: '/services', id: 2 },
   { name: 'Кейсы', link: '/cases', id: 3 },

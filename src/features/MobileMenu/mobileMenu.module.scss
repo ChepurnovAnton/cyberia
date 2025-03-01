@@ -1,7 +1,7 @@
-@use '../../app/styles/variables' as vars;
+@use '../../app/styles/variables' as *;
 
 .mobile_menu {
-  background-color: vars.$mobile-menu;
+  background-color: $mobile-menu;
   position: fixed;
   top: 0;
   left: 0;

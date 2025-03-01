@@ -1,0 +1,18 @@
+@use '../../../app/styles/variables' as *;
+
+.icon {
+  position: absolute;
+
+  top: -5px;
+  right: -5px;
+  color: #2D76F9;
+
+
+  @media(max-width: $mobile-size) {
+    color: white;
+    top: -30px;
+    left: 0;
+    width: 17px;
+    height: 17px;
+  }
+}

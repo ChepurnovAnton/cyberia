@@ -12,7 +12,7 @@ export const casesApi = createApi({
     }),
     submitForms: builder.mutation({
       query: (formData) => ({
-        url: '/feedbacks',
+        url: `/feedbacks`,
         method: 'POST',
         body: formData,
       })
