@@ -1,11 +1,12 @@
-import { ClassAttributes, InputHTMLAttributes } from "react";
-import { JSX } from "react/jsx-runtime";
+import { JSX } from 'react/jsx-runtime';
+import styles from './checkbox.module.scss';
 
-const Checkbox = (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLInputElement> & InputHTMLAttributes<HTMLInputElement>) => {
+const Checkbox = (props: JSX.IntrinsicElements['input']) => {
   return (
-    <>
-      <input {...props} type="checkbox" />
-    </>
+    <div className={styles.checkbox}>
+      <input {...props} type="checkbox" id="checkbox" />
+      <label htmlFor="checkbox">Согласие на обработку персональных данных</label>
+    </div>
   );
 };
 

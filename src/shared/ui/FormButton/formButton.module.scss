@@ -25,4 +25,8 @@
   @media(max-width: $medium-size) {
     margin-top: 42px;
   }
+  @media(max-width: $mobile-size) {
+
+    width: 100%;
+  }
 }

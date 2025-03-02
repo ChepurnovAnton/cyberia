@@ -6,7 +6,6 @@ interface FormButtonProps {
 }
 
 const FormButton = (props: FormButtonProps) => {
-
   return <button className={styles.button}>{props.children}</button>;
 };
 

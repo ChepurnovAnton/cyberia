@@ -1,0 +1,40 @@
+.checkbox {
+  position: relative;
+  top: -8px;
+
+
+  input {
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  label {
+    font-weight: 300;
+    font-size: 18px;
+    color: #eff3ff;
+  }
+
+  input:checked+label::after {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url('../../icons/check.svg');
+    margin-right: 0.5rem;
+    position: absolute;
+    top: 12px;
+    left: 3px;
+  }
+
+  label::before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #eef3ff87;
+    border-radius: 2px;
+    margin-right: 0.5rem;
+    position: relative;
+    top: 9px;
+  }
+}

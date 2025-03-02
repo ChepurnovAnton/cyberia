@@ -11,10 +11,9 @@
   font-size: 18px;
   height: 396px;
   align-items: center;
-  margin-top: 100px;
 
+  
   @media(max-width:$mobile-size) {
-    margin-top: 40px;
     grid-template-areas: 'footer_content';
     justify-content: space-between;
     font-size: $open-sans;
@@ -75,6 +74,5 @@
       'contacts navigation';
     grid-template-columns: minmax(auto, 370px) minmax(auto, 370px);
     row-gap: 38px;
-    // justify-content: space-between;
   }
 }
