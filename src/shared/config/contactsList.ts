@@ -8,7 +8,7 @@ interface Contacts {
 export const contactsList: Contacts[] = [
   {
     id: 1,
-    title: '+79991234567',
+    title: '+7 999 123 45 67',
     type: 'tel'
   },
   {

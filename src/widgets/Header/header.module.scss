@@ -7,7 +7,7 @@
   grid-template-columns: 131px minmax(auto, 191px) auto minmax(auto, 373px);
   max-width: $max-width;
   align-items: center;
-  padding: 64px 28px 0 28px;
+  padding-top: 64px;
 
   @media(max-width: $medium-size) {
     display: none;

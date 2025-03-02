@@ -1,3 +1,5 @@
+@use '../../app/styles/variables' as *;
+
 .project_list {
   margin-top: 52px;
   display: grid;
@@ -5,4 +7,8 @@
   justify-content: center;
   row-gap: 31px;
   column-gap: 39px;
+
+  @media(max-width: $medium-size) {
+    padding: $padding;
+  }
 }

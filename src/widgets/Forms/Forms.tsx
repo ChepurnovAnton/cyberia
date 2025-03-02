@@ -54,85 +54,94 @@ const Forms = () => {
 
   return (
     <section className={styles.forms_section}>
-      <h2 className={styles.title}>Расскажите о вашем проекте:</h2>
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.forms}>
-        <fieldset className={`${styles.fieldset} ${styles.name}`}>
-          <legend>Ваше имя*</legend>
-          <input
-            className={styles.input}
-            placeholder="Ваше имя*"
-            type="text"
-            {...register('name', { required: 'Имя обязательно' })}
+      <div className={styles.wripper}>
+        <div className={styles.title_block}>
+          <img
+            className={styles.form_icon}
+            src="src\shared\icons\form-icon.svg"
+            alt="form-icon"
           />
-          {errors.name && (
-            <span className={styles.error_validation}>
-              {errors.name.message}
-            </span>
-          )}
-        </fieldset>
-
-        <fieldset className={`${styles.fieldset} ${styles.email}`}>
-          <legend>Email*</legend>
-          <input
-            className={styles.input}
-            placeholder="Email*"
-            type="text"
-            {...register('email')}
-          />
-          {renderValidationError(validationError.email)}
-        </fieldset>
-
-        <fieldset className={`${styles.fieldset} ${styles.phone}`}>
-          <legend>Телефон*</legend>
-          <input
-            className={styles.input}
-            placeholder="Телефон*"
-            type="text"
-            {...register('phone')}
-          />
-          {renderValidationError(validationError.phone)}
-        </fieldset>
-
-        <fieldset className={`${styles.fieldset} ${styles.message} `}>
-          <legend>Сообщение*</legend>
-          <textarea
-            className={styles.input}
-            placeholder="Сообщение*"
-            {...register('message', {
-              required: 'Это поле обязательно для заполнения',
-            })}
-          />
-          {errors.message && (
-            <span className={styles.error_validation}>
-              {errors.message.message}
-            </span>
-          )}
-        </fieldset>
-
-        <div className={styles.checkbox}>
-          <Controller
-            control={control}
-            name="checkbox"
-            rules={{ required: 'Нужно согласиться, чтобы отправить форму' }}
-            render={({ field }) => <Checkbox {...field} />}
-          />
-          <p>Согласие на обработку персональных данных</p>
-          {errors.checkbox && (
-            <span className={styles.error_validation}>
-              {errors.checkbox.message}
-            </span>
-          )}
+          <h2 className={styles.title}>Расскажите о вашем проекте:</h2>
         </div>
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.forms}>
+          <fieldset className={`${styles.fieldset} ${styles.name}`}>
+            <legend>Ваше имя*</legend>
+            <input
+              className={styles.input}
+              placeholder="Ваше имя*"
+              type="text"
+              {...register('name', { required: 'Имя обязательно' })}
+            />
+            {errors.name && (
+              <span className={styles.error_validation}>
+                {errors.name.message}
+              </span>
+            )}
+          </fieldset>
 
-        <FormButton>Обсудить проект</FormButton>
+          <fieldset className={`${styles.fieldset} ${styles.email}`}>
+            <legend>Email*</legend>
+            <input
+              className={styles.input}
+              placeholder="Email*"
+              type="text"
+              {...register('email')}
+            />
+            {renderValidationError(validationError.email)}
+          </fieldset>
 
-        <p className={styles.description}>
-          Нажимая “Отправить”, Вы даете согласие на обработку персональных
-          данных
-        </p>
+          <fieldset className={`${styles.fieldset} ${styles.phone}`}>
+            <legend>Телефон*</legend>
+            <input
+              className={styles.input}
+              placeholder="Телефон*"
+              type="text"
+              {...register('phone')}
+            />
+            {renderValidationError(validationError.phone)}
+          </fieldset>
 
-        {isSuccess && <p>заявка отправлена!!!</p>}
-      </form>
+          <fieldset className={`${styles.fieldset} ${styles.message} `}>
+            <legend>Сообщение*</legend>
+            <textarea
+              className={styles.input}
+              placeholder="Сообщение*"
+              {...register('message', {
+                required: 'Это поле обязательно для заполнения',
+              })}
+            />
+            {errors.message && (
+              <span className={styles.error_validation}>
+                {errors.message.message}
+              </span>
+            )}
+          </fieldset>
+
+          <div className={styles.checkbox}>
+            <Controller
+              control={control}
+              name="checkbox"
+              rules={{ required: 'Нужно согласиться, чтобы отправить форму' }}
+              render={({ field }) => <Checkbox {...field} />}
+            />
+            <p>Согласие на обработку персональных данных</p>
+            {errors.checkbox && (
+              <span className={styles.error_validation}>
+                {errors.checkbox.message}
+              </span>
+            )}
+          </div>
+
+          <FormButton>Обсудить проект</FormButton>
+
+          <p className={styles.description}>
+            Нажимая “Отправить”, Вы даете согласие на обработку персональных
+            данных
+          </p>
+
+          {isSuccess && <p>заявка отправлена!!!</p>}
+        </form>
+      </div>
     </section>
   );
 };

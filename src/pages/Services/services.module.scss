@@ -1,9 +1,16 @@
-@use '../../app/styles/variables' as vars;
+@use '../../app/styles/variables' as *;
 
 .title {
-  font-family: vars.$fira-sans ;
+  font-family: $fira-sans ;
   font-weight: 600;
   font-size: 48px;
   color: #eef3ff;
-  padding: vars.$padding;
+
+
+  @media(max-width: $medium-size) {
+    font-weight: 500;
+    font-size: 21px;
+    padding: $padding;
+    font-family: $rubik;
+  }
 }

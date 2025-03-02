@@ -5,11 +5,13 @@
   display: grid;
   grid-template-columns: repeat(4, auto);
 
-  @media(max-width: 1070px) {
+
+  @media(max-width: $medium-size) {
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     row-gap: 20%;
     column-gap: 1%;
+    padding: $padding;
   }
 }
 
@@ -21,7 +23,7 @@
   background: #313341;
   border: none;
   border-radius: 7px;
-  padding: 10px 29px;
+  padding: 10px 2vw;
   height: 49px;
   color: #eef3ff;
   width: 100%;
@@ -31,9 +33,10 @@
     background: #ffffff17;
   }
 
-  @media(max-width:740px) {
+  @media(max-width:$mobile-size) {
     font-size: 12px;
     padding: 0;
+    max-height: 33px;
   }
 }
 

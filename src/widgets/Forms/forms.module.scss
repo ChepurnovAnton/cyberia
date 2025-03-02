@@ -1,8 +1,16 @@
-@use '../../app/styles/variables' as vars;
+@use '../../app/styles/variables' as *;
 
 .forms_section {
   margin-top: 100px;
-  font-family: vars.$fira-sans;
+  font-family: $fira-sans;
+}
+
+.wripper {
+  @media(max-width: $medium-size) {
+    background-color: $background-mobile-forms;
+    padding: $padding;
+    padding-top: 51px;
+  }
 }
 
 .forms {
@@ -17,7 +25,8 @@
   grid-template-columns: repeat(3, minmax(auto, 1fr));
   gap: 38px;
 
-  @media(max-width: vars.$medium-size) {
+  @media(max-width: $medium-size) {
+
     grid-template-areas:
       'name '
       'email'
@@ -33,24 +42,41 @@
 
 }
 
+.title_block {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
 .title {
   font-weight: 600;
   font-size: 48px;
   color: #eff3ff;
   max-width: 361px;
+
+  @media(max-width:$mobile-size) {
+    font-weight: 500;
+    font-size: 24px;
+  }
+}
+
+.form_icon {
+  @media(min-width:$mobile-size) {
+    display: none;
+  }
 }
 
 .fieldset {
   border: 1.50px solid #9aa8ba;
   border-radius: 8px;
   height: 61px;
-  padding-left: 10px;
+  padding-left: 24px;
 
   legend {
     padding: 0 10px;
     color: #eff3ff;
 
-    @media(max-width: vars.$medium-size) {
+    @media(max-width: $medium-size) {
       display: none;
     }
   }
@@ -70,7 +96,7 @@
     color: transparent;
 
 
-    @media(max-width: vars.$medium-size) {
+    @media(max-width: $medium-size) {
       color: white;
     }
   }
@@ -117,7 +143,7 @@
     color: #eff3ff;
   }
 
-  @media(max-width: vars.$medium-size) {
+  @media(max-width: $medium-size) {
     display: none;
   }
 }
@@ -128,7 +154,7 @@
 }
 
 .description {
-  font-family: vars.$open-sans;
+  font-family: $open-sans;
   grid-area: description;
   justify-self: center;
   text-align: center;
@@ -136,7 +162,7 @@
   font-size: 13px;
   text-align: center;
 
-  @media(min-width: vars.$medium-size) {
+  @media(min-width: $medium-size) {
     display: none;
   }
 }

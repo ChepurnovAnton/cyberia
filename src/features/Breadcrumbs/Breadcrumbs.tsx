@@ -12,9 +12,9 @@ const Breadcrumbs = () => {
   return (
     <nav className={styles.breadcrums}>
       <Link to="/">
-        <span>Главная</span>
+        <span className={styles.home_page_text}>Главная</span>
       </Link>
-      {findLastLevel ? ` / ${findLastLevel?.name}` : ''}
+      <span className={styles.last_page_text}> {findLastLevel ? ` / ${findLastLevel?.name}` : ''}</span>
     </nav>
   );
 };

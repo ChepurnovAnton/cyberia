@@ -7,13 +7,15 @@
   color: #eef3ff;
   margin-bottom: 65px;
 
+  @media(max-width: $medium-size) {
+    padding: $padding;
+  }
+
   @media(max-width: $mobile-size) {
     font-size: 21px;
     margin-bottom: 47px;
+    font-family: $rubik;
+    margin-bottom: 47px;
   }
-}
-
-.cases {
-  padding: $padding;
 }
 

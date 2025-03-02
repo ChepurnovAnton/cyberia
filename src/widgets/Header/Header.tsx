@@ -9,7 +9,7 @@ const Header = () => {
     <header className={styles.header}>
       <img
         className={styles.logo}
-        src="src\shared\icons\main-logo.png"
+        src="src\shared\icons\main-logo.svg"
         alt="main-icons"
       />
       <nav className={styles.navigation}>
