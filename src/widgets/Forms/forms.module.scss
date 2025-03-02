@@ -1,8 +1,8 @@
 @use '../../app/styles/variables' as *;
 
 .forms_section {
-  margin-top: 100px;
   font-family: $fira-sans;
+  height: 739px;
 }
 
 .wripper {
@@ -10,23 +10,24 @@
     background-color: $background-mobile-forms;
     padding: $padding;
     padding-top: 51px;
+    margin-top: 48px;
   }
 }
 
 .forms {
-  margin-top: 89px;
   display: grid;
   grid-template-areas:
     'name email phone'
     'message message message'
     'checkbox checkbox .'
     '. button .'
+    '. popup. '
   ;
   grid-template-columns: repeat(3, minmax(auto, 1fr));
   gap: 38px;
 
   @media(max-width: $medium-size) {
-
+    margin-top: 32px;
     grid-template-areas:
       'name '
       'email'
@@ -34,6 +35,7 @@
       'message'
       'button'
       'description'
+      'popup'
     ;
     grid-template-columns: 1fr;
     gap: 22px;
@@ -72,12 +74,17 @@
   height: 61px;
   padding-left: 24px;
 
+  @media(max-width: $medium-size) {
+    padding: 0;
+  }
+
   legend {
     padding: 0 10px;
     color: #eff3ff;
 
     @media(max-width: $medium-size) {
       display: none;
+
     }
   }
 }
@@ -90,14 +97,17 @@
   outline: none;
   border: none;
   // margin-bottom: 10px;
-  padding-left: 10px;
+  padding-left: 13px;
 
   &::placeholder {
     color: transparent;
 
-
     @media(max-width: $medium-size) {
-      color: white;
+      color: $placeholder-color;
+      font-weight: 400;
+      font-size: 13px;
+      font-family: $open-sans;
+
     }
   }
 

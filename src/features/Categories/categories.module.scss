@@ -4,6 +4,8 @@
   justify-content: space-between;
   display: grid;
   grid-template-columns: repeat(4, auto);
+  margin-bottom: 52px;
+
 
 
   @media(max-width: $medium-size) {
@@ -18,7 +20,7 @@
 .category_button {
   font-family: $fira-sans ;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 1.3rem;
   box-shadow: 8px 15px 29px 0 rgba(23, 27, 44, 0.41);
   background: #313341;
   border: none;

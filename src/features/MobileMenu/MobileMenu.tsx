@@ -5,15 +5,22 @@ import MobileNavigationItem from '../../shared/ui/MobileNavigationItem/MobileNav
 
 interface MobileMenuProps {
   setOpenMenu: (open: boolean) => void;
+  openMenu: boolean;
 }
 
-const MobileMenu: React.FC<MobileMenuProps> = ({ setOpenMenu }) => {
+const MobileMenu: React.FC<MobileMenuProps> = ({ openMenu, setOpenMenu }) => {
   const closeMenu = () => {
     setOpenMenu(false);
   };
 
   return (
-    <section className={styles.mobile_menu}>
+    <section
+      className={
+        openMenu
+          ? `${styles.mobile_menu} ${styles.active}`
+          : `${styles.mobile_menu}`
+      }
+    >
       <button onClick={closeMenu} className={styles.close_button}>
         <img src="src/shared/icons/close-menu-burger.png" alt="close-menu" />
       </button>

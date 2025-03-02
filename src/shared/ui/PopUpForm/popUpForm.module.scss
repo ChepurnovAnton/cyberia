@@ -1,0 +1,9 @@
+@use '../../../app/styles/variables' as *;
+
+.popup {
+  grid-area: popup;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  color: rgb(252, 255, 101);
+}

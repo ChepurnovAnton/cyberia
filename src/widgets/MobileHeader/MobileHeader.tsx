@@ -14,7 +14,7 @@ const MobileHeader = () => {
       <button className={styles.menu_button} onClick={() => setOpenMenu(true)}>
         <img src="src\shared\icons\menu-burger.png" alt="menu-burger-icon" />
       </button>
-      {openMenu && <MobileMenu setOpenMenu={setOpenMenu} />}
+      <MobileMenu openMenu={openMenu} setOpenMenu={setOpenMenu} />
     </header>
   );
 };

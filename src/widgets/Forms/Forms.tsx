@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { Input } from './types';
 import styles from './forms.module.scss';
 import FormButton from '../../shared/ui/FormButton/FormButton';
+import PopUpForm from '../../shared/ui/PopUpForm/PopUpForm';
 
 const Forms = () => {
   const [formData, { isSuccess }] = useSubmitFormsMutation();
@@ -63,6 +64,7 @@ const Forms = () => {
           />
           <h2 className={styles.title}>Расскажите о вашем проекте:</h2>
         </div>
+
         <form onSubmit={handleSubmit(onSubmit)} className={styles.forms}>
           <fieldset className={`${styles.fieldset} ${styles.name}`}>
             <legend>Ваше имя*</legend>
@@ -138,8 +140,7 @@ const Forms = () => {
             Нажимая “Отправить”, Вы даете согласие на обработку персональных
             данных
           </p>
-
-          {isSuccess && <p>заявка отправлена!!!</p>}
+          {isSuccess && <PopUpForm />}
         </form>
       </div>
     </section>

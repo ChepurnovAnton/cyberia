@@ -1,12 +1,12 @@
 @use '../../app/styles/variables' as *;
 
 .project_list {
-  margin-top: 52px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(327px, 387px));
   justify-content: center;
   row-gap: 31px;
   column-gap: 39px;
+  margin-bottom: 100px;
 
   @media(max-width: $medium-size) {
     padding: $padding;
